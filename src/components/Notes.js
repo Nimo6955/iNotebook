@@ -10,6 +10,7 @@ function Notes(props) {
     const context = useContext(noteContext);
     let navigate = useNavigate()
     const { notes, getNote, editNote } = context;
+    
     useEffect(() => {
         if(localStorage.getItem('token')){
             getNote()
@@ -17,13 +18,19 @@ function Notes(props) {
         else{
             navigate('/login')
         }
-
+        
         // eslint-disable-next-line
     }, [])
-
+    
     const ref = useRef(null)
     const refClose = useRef(null)
+    
+    const [viewNote, setViewNote] = useState({title: "", description: "", tag: ""});
 
+    const viewNoteFunc = (note) => {
+        setViewNote({title: note.title, description: note.description, tag: note.tag});
+    }
+    
     const [note, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""})
     
     const updateNote = (currentNote) => {
@@ -39,7 +46,10 @@ function Notes(props) {
     }
     const onchange = (e) => {
         setNote({...note, [e.target.name]: e.target.value})
+
     }
+   
+
     return (
         <>
             <AddNote showAlert={showAlert} />
@@ -57,7 +67,7 @@ function Notes(props) {
                         </div>
                         <div className="modal-body">
                             <div className="form-group">
-                                <label htmlFor="exampleInputEmail1">title</label>
+                                <label htmlFor="exampleInputEmail1">Title</label>
                                 <input type="text" className="form-control" key='etitle' id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" placeholder="" onChange={onchange} />
                             </div>
                             <div className="form-group">
@@ -78,16 +88,16 @@ function Notes(props) {
             </div>
             <div className='row my-3 mx-5'>
 
-                <h2>your Notes</h2>
-                <div className="container">
-                {notes.length===0 && 'No notes to display'}
+                <h2 id='NoteHeading' style={{marginTop: '10px'}}>{notes.length===0 || 'Your Notes'}</h2>
+                <div style={{textAlign:'center', color:'gray'}} className="container">
+                <h2>{notes.length===0 && 'No notes to display'}</h2>
                 </div>
                 {notes.map((note) => {
-                    return <Noteitem key={note._id} showAlert={showAlert}  updateNote={updateNote} note={note} />
+                    return <Noteitem key={note._id} showAlert={showAlert} viewNote={viewNote} viewNoteFunc={viewNoteFunc} updateNote={updateNote} note={note} />
                 })}
             </div>
            
-                
+            
         </>
     )
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 function Login(props) {
 
@@ -38,17 +40,20 @@ function Login(props) {
 
   return (
     <>
+    
+    <div className='log-in-Card '>
+      <h3 style={{textAlign:'center',marginBottom:'40px'}}>Log in</h3>
       <form onSubmit={handleOnSubmit}>
         <div className="form-group mx-5" >
-          <label htmlFor="Email1">Email address</label>
           <input type="email" className="form-control" value={credentials.email} id="email" name='email' aria-describedby="emailHelp" placeholder="Enter email" onChange={onchange} />
         </div>
         <div className="form-group mx-5">
-          <label htmlFor="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" value={credentials.password} id="password" name="password" placeholder="Password" onChange={onchange} />
         </div>
-        <button type="submit" className="btn btn-primary mx-5" >Submit</button>
+        <button style={{marginBottom:'20px'}} type="submit" className="btn btn-primary mx-5" >Submit</button>
       </form>
+        <p className='Sign-up_post'>Don't have an account ?<span><Link to='/signup'> Sign up</Link></span></p>
+      </div>
     </>
   )
 }

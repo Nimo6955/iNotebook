@@ -22,8 +22,8 @@ function Navbar() {
     if (localStorage.getItem('token')) {
       const homeIcon = document.getElementById('home-display')
       homeIcon.style.display = 'block'
-      const AboutIcon = document.getElementById('About-display')
-      AboutIcon.style.display = 'block'
+      // const AboutIcon = document.getElementById('About-display')
+      // AboutIcon.style.display = 'block'
     }
   }
 
@@ -33,7 +33,6 @@ function Navbar() {
 
   return (
     <>
-      <div>
 
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
@@ -46,19 +45,19 @@ function Navbar() {
                 <li className="nav-item">
                   <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} id='home-display' aria-current="page" to="/">Home</Link>
                 </li>
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} id='About-display' to="/about">About</Link>
+                {/* <li className="nav-item">
+                  <Link style={{display:'none'}} className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} id='About-display' to="/about">About</Link>
 
-                </li>
+                </li> */}
               </ul>
-              {!localStorage.getItem('token') ? <div>
-                <Link type="button" to='/login' id='btn-link' className="btn btn-link mx-2">Log In</Link>
-                <Link type="button" to='/signup' className="btn btn-primary mx-2">Singn Up</Link>
-              </div> : <button onClick={handleLogOut} className='btn btn-primary'>Log Out</button>}
-            </div>
           </div>
+
+              {!localStorage.getItem('token') ? <div>
+              </div> : <button onClick={handleLogOut} className='btn btn-primary btn-sm '>Log Out</button>}
+    
+            </div>
         </nav>
-      </div>
+      
 
     </>
   )

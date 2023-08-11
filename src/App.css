@@ -23,6 +23,7 @@
 }
 .tagNew{
   width: 500px;
+  margin-left: 5px;
 }
 .card-body{
   height: 200px;
@@ -31,5 +32,88 @@
 #OpenModal{
   display: none;
 }
+i{
+  cursor: pointer;
+}
+#OpenModal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  max-width: 800px;
+  border: none;
+  box-shadow: 0 5px 10px;
+}
+.fa-x{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.log-in-Card{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  padding-block: 30px;
+  width: 400px;
+  box-shadow: 0px 2px 10px;
+  border-radius: 10px;
   
+}
+
+.Sign-up_post{
+  margin-left: 50px;
+}
+.sign-up-Card{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  padding-block: 30px;
+  width: 400px;
+  box-shadow: 0px 2px 10px;
+  border-radius: 10px;
+}
+.Title-Tag{
+  display: flex;
+}
+.tagNew2{
+  display: none;
+}
+.DeletConfirm{
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  
+  .Title-Tag{
+    display: block;
+  }
+  .tagNew{
+    display: none;
+  }
+  .tagNew2{
+    display: block;
+    margin-top: 10px;
+    width: 300px !important;
+    margin-bottom: 10px;
+  }
+  .titleNew{
+    width: 300px !important;
+  }
+  
+}
+
+@media only screen and (max-width: 280px) {
+
+  #title{
+    width: 200px !important
+  }
+  .tagNew2{
+    width: 200px !important
+  }
+  #description{
+    width: 200px !important
+
+  }
+}
 

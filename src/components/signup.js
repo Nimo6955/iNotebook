@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 function Signup(props) {
 
@@ -34,27 +36,28 @@ function Signup(props) {
   }
   return (
     <>
+      <div className='sign-up-Card'>
+      <h3 style={{textAlign:'center',marginBottom:'40px'}}>Sign Up</h3>
 
       <form className='mx-5' onSubmit={handleOnSubmit}>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Name</label>
-          <input type="text" className="form-control" onChange={onchange} id="name" name='name' aria-describedby="emailHelp" placeholder="Enter Name" />
+          <input type="text" className="form-control" onChange={onchange} id="name" name='name' aria-describedby="emailHelp" placeholder="Name" />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" onChange={onchange} id="email" name='email' aria-describedby="emailHelp" placeholder="Enter email" />
+          <input type="email" className="form-control" onChange={onchange} id="email" name='email' aria-describedby="emailHelp" placeholder="Email" />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" onChange={onchange} id="password" name='password' placeholder="Password" minLength={5} required />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">confirm Password</label>
-          <input type="password" className="form-control" onChange={onchange} id="cpassword" name='cpassword' placeholder="Password" minLength={5} required />
+          <input type="password" className="form-control" onChange={onchange} id="cpassword" name='cpassword' placeholder="Confirm Password" minLength={5} required />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+
+        <button style={{marginBottom:'20px'}} type="submit" className="btn btn-primary">Submit</button>
+        <p style={{textAlign:'center'}}>Already have an Account ?<span><Link to='/login'> Log in</Link></span></p>
       </form>
 
+      </div>
     </>
   )
 }
