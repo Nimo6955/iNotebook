@@ -87,6 +87,7 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
         //find the note to be delete it
 
         let note = await Note.findById(req.params.id);
+        console.log('backendNote',note);
         if (!note) { return res.status(400).send("Not found") }
 
         // Allow deletion only if user owns this note
@@ -99,7 +100,7 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Some error occured")
+        res.status(500).send("Some error occured")  
     }
 
 

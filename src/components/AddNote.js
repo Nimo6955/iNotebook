@@ -48,29 +48,30 @@ function AddNote(props) {
     return (
 
       <>
-      
-        <h2 style={{marginLeft:'50px'}}>Add a Note</h2>
+      <div style={{background: '#0b0c10'}}>
+
+        <h2 style={{marginLeft:'50px'}} className='text-white'>Add a Note</h2>
         <form className='my-3 mx-5'>
           <div className="form-group ">
             <div className='Title-Tag'>
-            <input type="text" className="form-control titleNew" style={{width: '800px', height: '33px'}} id="title" name="title" value={note.title} aria-describedby="emailHelp" placeholder="Title" onChange={onchange}></input>
+            <input type="text" className="glowInput" style={{ height: '33px'}} id="title" name="title" value={note.title} aria-describedby="emailHelp" placeholder="Title" onChange={onchange}></input>
           
 
-                  <Select className='tagNew' key={seed} id="tag"  name="tag"  onChange={(index) => {note.tag = index}}
-                    style={{ width: '530px' }}
+                  <Select className='tagNew' key={seed} id="tag" dropdownStyle={{ backgroundColor: '#343a40', border: '2px solid #66fcf1' }} name="tag"  onChange={(index) => {note.tag = index}}
+                    style={{ width: '100%' }}
                     placeholder="Tag (Optional)"
                     dropdownRender={(menu) => (
                       <>
                         {menu}
                         <Divider style={{ margin: '8px 0' }} />
                         <Space style={{ padding: '0 8px 4px' }}>
-                          <Input
+                          <Input style={{border: '2px solid #66fcf1', backgroundColor: ''}}
                             placeholder="Please enter item"
                             ref={inputRef}
                             value={name}
                             onChange={onNameChange}
                           />
-                          <Button style={{ marginLeft: '20px' }} type="text" icon={<PlusOutlined />} onClick={addItem}>
+                          <Button style={{ marginLeft: '20px' ,color: 'white'}} type="text" icon={<PlusOutlined />} onClick={addItem}>
                             Add item
                           </Button>
                         </Space>
@@ -80,10 +81,10 @@ function AddNote(props) {
                 </div>
           </div>
           <div className="form-group">
-            <textarea type="text" style={{ height: '200px',resize:'none' }} className="form-control" id="description" name="description" value={note.description} placeholder="Description" onChange={onchange} />
+            <textarea type="text" style={{ height: '200px',resize:'none' }} className="glowtextarea" id="description" name="description" value={note.description} placeholder="Description" onChange={onchange} />
           </div>
           <Select className='tagNew2' key={seed} id="tag"  name="tag"  onChange={(index) => {note.tag = index}}
-                    style={{ width: 430 }}
+                    style={{ width: '100%' }}
                     placeholder="Tag (Optional)"
                     dropdownRender={(menu) => (
                       <>
@@ -105,8 +106,9 @@ function AddNote(props) {
                     options={items.map((item) => ({ name: item, value: item }))} />
 
 
-          <button disabled={note.title.length < 5 || note.description.length < 5} type="submit" className="btn btn-primary" onClick={handleOnClick}>Submit</button>
+          <button disabled={note.title.length < 5 || note.description.length < 5} type="submit" className={note.title.length < 5 || note.description.length < 5 ? 'submitBtnD': 'submitBtn'} onClick={handleOnClick}>Submit</button>
         </form>
+        </div>
 
       </>
     )

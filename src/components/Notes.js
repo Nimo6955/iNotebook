@@ -52,6 +52,8 @@ function Notes(props) {
 
     return (
         <>
+        <div style={{background: '#0b0c10'}}>
+
             <AddNote showAlert={showAlert} />
             <button type="button" ref={ref} className="btn btn-primary d-none" data-toggle="modal" data-target="#exampleModal">
                 Launch demo modal
@@ -86,9 +88,9 @@ function Notes(props) {
                     </div>
                 </div>
             </div>
-            <div className='row my-3 mx-5'>
+            <div className='row mx-5'>
 
-                <h2 id='NoteHeading' style={{marginTop: '10px'}}>{notes.length===0 || 'Your Notes'}</h2>
+                <h2 id='NoteHeading' className='text-white glow' style={{marginTop: '10px'}}>{notes.length===0 || 'Your Notes'}</h2>
                 <div style={{textAlign:'center', color:'gray'}} className="container">
                 <h2>{notes.length===0 && 'No notes to display'}</h2>
                 </div>
@@ -97,6 +99,7 @@ function Notes(props) {
                 })}
             </div>
            
+        </div>
             
         </>
     )

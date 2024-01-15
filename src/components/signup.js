@@ -36,8 +36,10 @@ function Signup(props) {
   }
   return (
     <>
+    <div style={{backgroundColor: '#0b0c10',height:'100vh'}}>
+
       <div className='sign-up-Card'>
-      <h3 style={{textAlign:'center',marginBottom:'40px'}}>Sign Up</h3>
+      <h3 style={{textAlign:'center',marginBottom:'40px',color: 'white'}}>Sign Up</h3>
 
       <form className='mx-5' onSubmit={handleOnSubmit}>
         <div className="form-group">
@@ -53,11 +55,13 @@ function Signup(props) {
           <input type="password" className="form-control" onChange={onchange} id="cpassword" name='cpassword' placeholder="Confirm Password" minLength={5} required />
         </div>
 
-        <button style={{marginBottom:'20px'}} type="submit" className="btn btn-primary">Submit</button>
-        <p style={{textAlign:'center'}}>Already have an Account ?<span><Link to='/login'> Log in</Link></span></p>
+        <button style={{marginBottom:'20px'}} type="submit" className="submitBtn">Submit</button>
+        <p style={{textAlign:'center',color: 'white'}} className='Sign-up_post'>Already have an Account ?<span><Link to='/login'> Log in</Link></span></p>
       </form>
 
       </div>
+    </div>
+
     </>
   )
 }

@@ -25,6 +25,44 @@
   width: 500px;
   margin-left: 5px;
 }
+.ant-select-selector {
+  outline: none;
+    background-color: #0b0c10 !important;
+    border-color: #66fcf1;
+    /* box-shadow: 0 0 10px #66fcf1; */
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white !important;
+    border: none !important;
+  /* background-color: green !important; */
+}
+.ant-select {
+  outline: none;
+    background-color: #0b0c10 !important;
+    border-color: #66fcf1;
+    /* box-shadow: 0 0 10px #66fcf1; */
+    border-radius: 10px;
+    border: 2px solid #66fcf1;
+    padding-left: 10px;
+    color: white !important;
+  /* background-color: green !important; */
+}
+.ant-select-selection-placeholder,.ant-select-arrow{
+  color: white !important;
+}
+.ant-picker-input>input::placeholder {
+  color: red !important;
+}
+
+.ant-select-item-option {
+  /* padding: 0.5rem 12px !important; */
+  color: white !important;
+
+  &:hover {
+      background-color: #66fcf1 !important;
+      color: black !important;
+  }
+}
 .card-body{
   height: 200px;
 
@@ -39,7 +77,7 @@ i{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%,-50%);
   z-index: 2;
   max-width: 800px;
   border: none;
@@ -56,14 +94,13 @@ i{
   transform: translate(-50%);
   padding-block: 30px;
   width: 400px;
-  box-shadow: 0px 2px 10px;
   border-radius: 10px;
+  box-shadow: 0px 2px 10px #66fcf1;
+  border: 2px solid #66fcf1;
   
 }
 
-.Sign-up_post{
-  margin-left: 50px;
-}
+
 .sign-up-Card{
   position: absolute;
   left: 50%;
@@ -72,6 +109,8 @@ i{
   width: 400px;
   box-shadow: 0px 2px 10px;
   border-radius: 10px;
+  box-shadow: 0px 2px 10px #66fcf1;
+  border: 2px solid #66fcf1;
 }
 .Title-Tag{
   display: flex;
@@ -94,7 +133,7 @@ i{
   .tagNew2{
     display: block;
     margin-top: 10px;
-    width: 300px !important;
+    width: 300px ;
     margin-bottom: 10px;
   }
   .titleNew{
@@ -116,4 +155,115 @@ i{
 
   }
 }
+.fa-trash,.fa-pen-to-square{
+  color: white;
+}
 
+.fa-trash:hover{
+  color: red;
+}
+.fa-pen-to-square:hover{
+  color: rgb(81, 81, 230);
+}
+
+.glowInput{
+    outline: none;
+    background-color: #0b0c10 !important;
+    border-color: #66fcf1;
+    /* box-shadow: 0 0 10px #66fcf1; */
+    border: 2px solid #66fcf1;
+    border-radius: 10px;
+    width: 100%;
+    padding-left: 10px;
+    color: white;
+}
+.glowtextarea{
+  outline: none;
+    background-color: #0b0c10 !important;
+    border-color: #66fcf1;
+    /* box-shadow: 0 0 10px #66fcf1; */
+    border: 2px solid #66fcf1;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
+    width: 100%;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: white;
+}
+
+.glow {
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #66fcf1, 0 0 4px #66fcf1, 0 0 4px #66fcf1, 0 0 4px #66fcf1, 0 0 4px #66fcf1;
+  }
+  to {
+    text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #66fcf1, 0 0 4px #66fcf1, 0 0 4px #66fcf1, 0 0 4px #66fcf1, 0 0 4px #66fcf1;
+  }
+}
+.submitBtn{
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  color: black;
+  border-radius: 10px;
+  background-color: #66fcf1;
+}
+
+.submitBtnD{
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  color: black;
+  border-radius: 10px;
+  background-color: #45a8a2;
+  cursor: not-allowed;
+
+}
+.ant-modal-content,.ant-card{
+  padding: none !important;
+  background-color: #000000 !important;
+}
+.fa-solid, .ant-modal-close-icon{
+  color: white !important;
+}
+#name
+,#email
+,#password
+,#cpassword{
+  outline: none;
+  background-color: #0b0c10 !important;
+  border-color: #66fcf1;
+  /* box-shadow: 0 0 10px #66fcf1; */
+  border: 2px solid #66fcf1;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 10px;
+  color: white;
+}
+@media only screen and (max-width: 400px) {
+    .log-in-Card,.sign-up-Card{
+      width: 300px;
+    }
+    .Sign-up_post{
+      font-size: small;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .log-in-Card,.sign-up-Card{
+      width: 270px;
+    }
+    .Sign-up_post{
+      font-size: x-small;
+    }
+}
