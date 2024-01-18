@@ -1,11 +1,11 @@
 import { useState } from 'react';
-
 import NoteContext from './notecontext';
 
-const NoteState = (props) => {
-  const host = "http://localhost:5000"
-  const notesInitial = []
 
+const NoteState = (props) => {
+  const host = process.env.REACT_APP_BackEnd
+  const notesInitial = []
+// console.log(process.env.REACT_APP_VariableName);
   const [notes, setNotes] = useState(notesInitial)
 
   // GEt a Note
