@@ -231,7 +231,7 @@ textarea::-webkit-input-placeholder {
   color: black;
   border-radius: 10px;
   background-color: #45a8a2;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
 
 }
 .ant-modal-content,.ant-card{
